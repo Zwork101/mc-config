@@ -7,12 +7,18 @@ services:
     stdin_open: true
     ports:
       - "443:25565"
+    deploy:
+      resources:
+        limits:
+          cpus: 5
+          memory: 14G
     environment:
       ALLOW_FLIGHT: "TRUE"
       EULA: "TRUE"
       TYPE: "FORGE"
+      ICON: "nathan_lore.jpg"
       VERSION: "1.20.1"
-      MEMORY: "4G"
+      MEMORY: "8G"
       MAX_PLAYERS: "10"
       MOTD: "\"I'm a seperate but equal kind of guy\" -Dawson"
       USE_AIKAR_FLAGS: "false"
