@@ -222,5 +222,11 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/apothic-attributes
         https://www.curseforge.com/minecraft/mc-mods/yungs-better-jungle-temples
         https://www.curseforge.com/minecraft/mc-mods/alltheleaks
+        https://www.curseforge.com/minecraft/mc-mods/gravestone-mod
+      MODRINTH_PROJECTS: |-
+        cobblemon-legendary-structures
+        ascension-megamons
+        cobblemonrider1.5
+        cobbreeding
     volumes:
       - "./data:/data"
