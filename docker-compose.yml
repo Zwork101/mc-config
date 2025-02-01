@@ -10,7 +10,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: 5
+          cpus: '5.0'
           memory: 14G
     environment:
       ALLOW_FLIGHT: "TRUE"
@@ -98,7 +98,6 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/towns-and-towers
         https://www.curseforge.com/minecraft/mc-mods/mekanism-generators
         https://www.curseforge.com/minecraft/mc-mods/controlling
-        https://www.curseforge.com/minecraft/mc-mods/deep-aether
         https://www.curseforge.com/minecraft/mc-mods/create-curios-jetpack
         https://www.curseforge.com/minecraft/mc-mods/create-eureka
         https://www.curseforge.com/minecraft/mc-mods/mekanism
