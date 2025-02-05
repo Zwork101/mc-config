@@ -7,11 +7,12 @@ services:
     stdin_open: true
     ports:
       - "443:25565"
-    deploy:
-      resources:
-        limits:
-          cpus: '5.0'
-          memory: 14G
+    restart: unless-stopped
+    healthcheck:
+      test: mc-health
+      start_period: 1m
+      interval: 5s
+      retries: 20
     environment:
       ALLOW_FLIGHT: "TRUE"
       EULA: "TRUE"
