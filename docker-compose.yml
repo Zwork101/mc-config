@@ -7,18 +7,19 @@ services:
     stdin_open: true
     ports:
       - "443:25565"
-    deploy:
-      resources:
-        limits:
-          cpus: 5
-          memory: 14G
+    restart: unless-stopped
+    healthcheck:
+      test: mc-health
+      start_period: 1m
+      interval: 5s
+      retries: 20
     environment:
       ALLOW_FLIGHT: "TRUE"
       EULA: "TRUE"
       TYPE: "FORGE"
       ICON: "nathan_lore.jpg"
       VERSION: "1.20.1"
-      MEMORY: "8G"
+      MEMORY: "12G"
       MAX_PLAYERS: "10"
       MOTD: "\"I'm a seperate but equal kind of guy\" -Dawson"
       USE_AIKAR_FLAGS: "false"
@@ -31,6 +32,7 @@ services:
         Zwack010
         CryHav0k__
         oriattack
+        Bruh_underscore
       OPS: |-
         Zwack010
       EXISTING_WHITELIST_FILE: "SYNCHRONIZE"
@@ -98,7 +100,6 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/towns-and-towers
         https://www.curseforge.com/minecraft/mc-mods/mekanism-generators
         https://www.curseforge.com/minecraft/mc-mods/controlling
-        https://www.curseforge.com/minecraft/mc-mods/deep-aether
         https://www.curseforge.com/minecraft/mc-mods/create-curios-jetpack
         https://www.curseforge.com/minecraft/mc-mods/create-eureka
         https://www.curseforge.com/minecraft/mc-mods/mekanism
@@ -229,10 +230,22 @@ services:
         https://www.curseforge.com/minecraft/mc-mods/yungs-better-jungle-temples
         https://www.curseforge.com/minecraft/mc-mods/alltheleaks
         https://www.curseforge.com/minecraft/mc-mods/gravestone-mod
+        https://www.curseforge.com/minecraft/mc-mods/serializerdebug
+        https://www.curseforge.com/minecraft/mc-mods/mc2discord
+        https://www.curseforge.com/minecraft/mc-mods/simpletms-tms-and-trs-for-cobblemon
+        https://www.curseforge.com/minecraft/mc-mods/cobblemon-unchained
+        https://www.curseforge.com/minecraft/mc-mods/cobgyms
+        https://www.curseforge.com/minecraft/mc-mods/cobblemon-challenge
+        https://www.curseforge.com/minecraft/mc-mods/timeless-and-classics-zero
+        https://www.curseforge.com/minecraft/mc-mods/radium-reforged
+        https://www.curseforge.com/minecraft/mc-mods/cobblemontrainers
+        https://www.curseforge.com/minecraft/mc-mods/cobblemon-counter
       MODRINTH_PROJECTS: |-
         cobblemon-legendary-structures
         ascension-megamons
         cobblemonrider1.5
         cobbreeding
+        unchained
+      RESOURCE_PACK: "https://cdn.modrinth.com/data/TiFXQSAQ/versions/OgaAllBB/MysticMons_v2.0.1.zip"
     volumes:
       - "./data:/data"
